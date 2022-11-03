@@ -26,12 +26,21 @@ function howManyMovies(moviesArray) {
 function scoresAverage(moviesArray) {
     if (moviesArray.length === 0) return 0;
     const scoreAver = (moviesArray.reduce((a,b) => a.score + b.score) / moviesArray.length);
-    console.log(scoreAver);
     return scoreAver.toPrecision(3)*1;
 }
 
 // Iteration 4: Drama movies - Get the average of Drama Movies
-function dramaMoviesScore(moviesArray) {}
+function dramaMoviesScore(moviesArray) {
+    if (moviesArray.length === 0) return 0;
+    const moviesDrama = moviesArray.filter(el => el.genre.includes("Drama"));
+    if (moviesDrama.length === 0) return 0;
+    else if (moviesDrama.length === 1) return moviesDrama.score;
+    else if (moviesDrama.length > 1) {
+        const scoreDrama = moviesDrama.reduce((a,b) => a.score + b.score);
+        const scoreDramaAver = scoreDrama / moviesDrama.length;
+        return scoreDramaAver*1;
+    }
+}
 
 // Iteration 5: Ordering by year - Order by year, ascending (in growing order)
 function orderByYear(moviesArray) {}
