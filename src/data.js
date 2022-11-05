@@ -2001,3 +2001,77 @@ const movies = [
     score: 8
   }
 ];
+
+
+function bestYearAvg(moviesArray) {
+  if (moviesArray.length === 0) return null;
+  const scores = moviesArray.map((el) => {
+    return [{year: el.year, score: el.score}]
+  });
+  const scoresSorted = scores.sort((a, b) => a.year - b.year);
+  console.log(scoresSorted)
+
+
+
+  return `The best year was <YEAR> with an average score of <RATE>`;
+}
+
+console.log(bestYearAvg(movies))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function myFunction(x) {
+  console.log("Console log: " + x);
+  let totalMinutes = 0;
+  if (x.includes("h")) {
+    let i = x.indexOf("h");
+    totalMinutes += x[i - 1] * 60;
+  }
+  if (x.includes("min")) {
+    let i = x.indexOf("m");
+    totalMinutes += x.slice([i - 2], [i - 1]) * 1;
+  }
+  return totalMinutes;
+}
+
+function turnHoursToMinutes(moviesArray) {
+  const moviesCopy = [...moviesArray];
+  const moviesMinutes = moviesCopy.map((el) => {
+    return {
+      title: el.title,
+      year: el.year,
+      director: el.director,
+      duration: myFunction(el.duration),
+      genre: el.genre,
+      score: el.score,
+    };
+  });
+
+  return moviesMinutes;
+}
+
+console.log(turnHoursToMinutes(movies));
+*/
+
+
+
+
+
+
+// module.exports = movies;
